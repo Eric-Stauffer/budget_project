@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+    <meta lang="en">
+    <title>Financial Budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" style="color:white;">
+            <h1>Personal Financial Budget</h1>
+        </a>
+        <div class="login-info">
+            <h4 id="welcome-user">Welcome, </h4>
+            <h4 id="welcome-time">Last Login: </h4>
+            <button onclick="eraseData()" id="erase-data">Erase User Data</button>
+        </div>
+
+    </header>
+
+    <div class="container" style="flex-direction: column;">
+        <table id="budget-tracker">
+            <tr id="budget-tracker-header">
+                <th>Amount per Week</th>
+                <th>Spent</th>
+                <th>Bottom Line</th>
+            </tr>
+            <tr>
+                <td>
+                    <input id="amount-per-week" type="number" name="budget">
+                </td>
+                <td id="spent">
+                </td>
+                <td id="bottom-line">
+                </td>
+            </tr>
+        </table>
+        <div>
+        </div>
+        <div id="table-tabs">
+            <p>oops... something went wrong</p>
+        </div>
+        <div id="expense-tracker">
+            <p>oops... something went wrong</p>
+        </div>
+        <button type="submit" onclick="submitItem()" class="state-color" id="add-new-button" href="#">+ add new</button>
+
+    </div>
+    <div class="popup">
+        <div class="header">
+            <h3>Create a Category</h3>
+            <button class="close-button" onclick="removeCategoryPopup()">&times;</button></div>
+        <div class="popup-body">
+            <label for="set-cat-name">Enter Category Name
+            <input type="text" id="set-cat-name">
+        </label>
+            <label for="set-cat-color"> Input Color Code for Category
+            <input type="text" id="set-cat-color">
+        </label>
+
+            <label for="set-cat-budget"> Enter Weekly Budget for Category
+            <input type="number" id="set-cat-budget">
+        </label>
+        </div>
+
+        <button type="submit" onclick="submitCategory()" class="popup-submit-button">Create New Category!</button>
+    </div>
+    <div class="overlay"></div>
+    <script src="model.js"></script>
+    <script src="script.js"></script>
+
+</body>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <meta lang="en">
+    <title>Financial Budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" style="color:white;">
+            <h1>Personal Financial Budget</h1>
+        </a>
+        <a href="#" class="login-info" onclick="createPopup()">
+            <h3>Login</h3>
+        </a>
+    </header>
+    <div class="container">
+        <div class="photo-container">
+            <img id="showcase-photo" src="accounting.jpg">
+            <p>Photo used from royalty free website <a href="https://www.dreamstime.com/">dreamstime.com</a> </p>
+        </div>
+        <div class="text-container">
+            <h2>Personal Expense Tracker</h2>
+            <p><span class="tab"></span>Having an expense tracker is one of the most important parts of taking charge of your finances. When you have an expense tracker you are able to see where every dollar you spend goes. This is key to being able to stop
+                living paycheck to paycheck. <br><br> <span class="tab"></span>To learn more about the importance of budgeting Grant Sabatier has a great article <a target="_blank" href="https://millennialmoney.com/what-is-a-budget">here.</a> To Create
+                your own expense tracker login.
+            </p>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="header">
+            <h2>Login</h2>
+            <button class="close-button" onclick="removePopup()">&times;</button>
+        </div>
+        <div class="popup-body">
+            <div id="login-message"></div>
+            <label for="username"> Enter Username
+            <input type="text" id="username">
+        </label>
+            <label for="password"> Enter Password
+            <input type="password" id="password">
+        </label>
+        </div>
+        <button type="submit" style="font-size: larger; font-weight: bold;" onclick="verifyLogin()" class="popup-submit-button">Login</button>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        function createPopup() {
+            document.querySelector(".popup").classList.add("active")
+            document.querySelector(".overlay").classList.add("active")
+        }
+
+        function removePopup() {
+            document.getElementById("login-message").innerHTML = ""
+            document.querySelector(".popup").classList.remove("active")
+            document.querySelector(".overlay").classList.remove("active")
+        }
+
+        function giveErrorMessage() {
+            let message = document.getElementById("login-message")
+            message.style.color = '#ff0033'
+            message.innerHTML = "* Incorrect Username or Password *"
+        }
+
+        function verifyLogin() {
+
+            let userName = document.getElementById("username").value
+            let password = document.getElementById("password").value
+            let data = "userName=" + userName + "&password=" + password
+
+            let request = new XMLHttpRequest();
+            let url = 'http://universe.tc.uvu.edu/cs2550/assignments/PasswordCheck/check.php'
+            request.open("POST", url, false);
+            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            request.send(data)
+
+
+            if (request.status == 200) {
+                responseJson = JSON.parse(request.response)
+                if (responseJson["result"] == "valid") {
+                    localStorage.setItem("cs2550timestamp", responseJson["userName"] + " " + responseJson["timestamp"])
+                    window.location = "fin-planner.html"
+                } else {
+                    giveErrorMessage();
+                }
+            } else {
+                console.log("There was an error in validating the login")
+            }
+        }
+    </script>
+</body>

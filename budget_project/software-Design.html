@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<headd>
+
+    <title>Software Design</title>
+    <style>
+        #bigText {
+            font-size: xx-large;
+        }
+    </style>
+</headd>
+
+<body>
+    <h1 id="bigText">Run changeState(1); or changeState(2); in console to see changes in the expense tracker</h1>
+    <h1>Software Design</h1>
+    <h2>Model</h2>
+    <pre>Empty array in constructor to hold differnt Categories
+        <em>Add Categories</em>
+        This creates a category and adds it to the list.
+        <em>Remove Categories</em>
+        This removes a category from the list.
+    </pre>
+    <h2>Category</h2>
+    <pre>The constructor holds things like
+        the color
+        the name
+        an array of items for that category
+        the budget for that category
+        and the total expenses so far for that category
+
+        Then we have methods that return budget - total expenses
+        methods that add or remove expense items
+        and a method that allows you to change your budget
+    </pre>
+    <h2>List items</h2>
+    <pre>
+            the constructor holds a place for 
+            a date
+            a description
+            a payment type 
+            and an amount
+
+            I cannot currently think of any methods I need for my expense items
+        </pre>
+
+</body>
