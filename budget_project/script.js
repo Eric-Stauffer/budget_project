@@ -1,34 +1,26 @@
 let expenseTracker = new Model();
-let state = expenseTracker.categorys.length - 1;
-let newBackgroundColor = 'background-color:' + expenseTracker.categorys[state].color + ";"
 
-
-function setUserData() {
-    let userWelcome = document.getElementById("welcome-user")
-    let timeWelcome = document.getElementById("welcome-time")
-    let loginArray = localStorage.getItem("cs2550timestamp")
-    if (loginArray != null) {
-        loginArray = loginArray.split(" ")
-    } else(loginArray = ["Default", "Default", "Default"])
-    let user = loginArray[0]
-    let loginTimeStamp = loginArray[1] + " " + loginArray[2] + " "
-
-    userWelcome.innerHTML = userWelcome.innerHTML + user
-    timeWelcome.innerHTML = timeWelcome.innerHTML + loginTimeStamp
+function loadExpenseTracker() {
+    if (currentUser != undefined) {
+        for (category of userData.categories) {
+            expenseTracker.addCategory(category.color, category.name, category.budget)
+            for (item of category.items) {
+                expenseTracker.categorys[expenseTracker.categorys.length - 1].addItem(item.date, item.description, item.payment, item.amount)
+            }
+        }
+        state = expenseTracker.categorys.length - 1;
+    }
 }
-setUserData()
-    // modifier functions
+let state = expenseTracker.categorys.length - 1;
+let newBackgroundColor = expenseTracker.categorys[state].color
+
+// modifier functions
 function changeState(newState) {
     state = newState;
-    newBackgroundColor = 'background-color:' + expenseTracker.categorys[state].color + ";"
+    newBackgroundColor = expenseTracker.categorys[state].color
     updateBudget()
     createTable()
-    document.getElementById("add-new-button").setAttribute('style', newBackgroundColor)
-}
-
-function eraseData() {
-    localStorage.clear();
-    location.reload();
+    document.getElementById("add-new-button").style.backgroundColor = newBackgroundColor;
 }
 
 // creationFunctions
@@ -37,7 +29,7 @@ function createTable() {
     const itemToReplace = document.querySelector("#expense-tracker")
     let expenseTrackerTable = document.createElement("table")
     expenseTrackerTable.id = "expense-tracker";
-    expenseTrackerTable.setAttribute('style', newBackgroundColor)
+    expenseTrackerTable.style.backgroundColor = newBackgroundColor;
     let expenseTrackerBody = document.createElement("tbody")
     expenseTrackerTable.appendChild(expenseTrackerBody)
     expenseTrackerTable.id = "expense-tracker";
@@ -143,7 +135,6 @@ function createTabsHeader() {
     }
     container.replaceChild(tableTabs, itemToReplace)
     changeState(state)
-
     addTabButtons();
 }
 
@@ -161,7 +152,7 @@ function updateBudget() {
     amountPerWeek.value = expenseTracker.categorys[state].budget;
     spent.innerHTML = expenseTracker.categorys[state].spent;
     bottomLine.innerHTML = expenseTracker.categorys[state].bottomLine()
-    document.getElementById("budget-tracker-header").setAttribute('style', newBackgroundColor)
+    document.getElementById("budget-tracker-header").style.backgroundColor = newBackgroundColor;
 
 }
 
@@ -184,10 +175,9 @@ function submitCategory() {
     expenseTracker.addCategory(categoryColor, categoryName, categoryBudget)
 
     categoryName.value, categoryColor.value, categoryBudget.value = ''
+    changeState(expenseTracker.categorys.length - 1)
     removeCategoryPopup()
     createTabsHeader();
-
-
 }
 
 function addTabButtons() {
@@ -284,6 +274,7 @@ createExpenseTracker()
 
 
 function createExpenseTracker() {
+    loadExpenseTracker();
     createTable();
     createTabsHeader();
     moveTabsDown(state);

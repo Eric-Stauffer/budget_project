@@ -97,7 +97,6 @@ body {
     padding-inline-end: 18vw;
     flex-wrap: nowrap;
     max-width: 500px;
-    overflow: scroll;
 }
 
 #table-tabs li {
@@ -107,7 +106,6 @@ body {
     border-top-left-radius: 25%;
     border-top-right-radius: 25%;
     display: inline-block;
-    overflow: auto;
     max-width: 4vw;
     font-size: larger;
     cursor: pointer;

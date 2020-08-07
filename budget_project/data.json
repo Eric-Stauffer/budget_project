@@ -1,0 +1,329 @@
+[{
+        "userName": "Harpo",
+        "categories": [{
+                "color": "#F16323",
+                "name": "Food",
+                "budget": 120,
+                "items": [{
+                        "date": "12/24/20",
+                        "description": "Candy Canes",
+                        "payment": "card",
+                        "amount": 5
+                    }, {
+                        "date": "12/23/20",
+                        "description": "hot choclate",
+                        "payment": "cash",
+                        "amount": 8
+                    },
+                    {
+                        "date": "12/21/20",
+                        "description": "Candy",
+                        "payment": "card",
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "color": "#F2F3F4",
+                "name": "Housing",
+                "budget": 1000,
+                "items": [{
+                        "date": "12/31/20",
+                        "description": "Mortgage",
+                        "payment": "card",
+                        "amount": 800
+                    }, {
+                        "date": "10/31/20",
+                        "description": "hole repair",
+                        "payment": "cash",
+                        "amount": 100
+                    },
+                    {
+                        "date": "10/31/20",
+                        "description": "Insurance",
+                        "payment": "card",
+                        "amount": 125
+                    }
+                ]
+            },
+            {
+                "color": "#FFD021",
+                "name": "Fun Money",
+                "budget": 100,
+                "items": [{
+                        "date": "12/25/20",
+                        "description": "Sword Sharpening",
+                        "payment": "card",
+                        "amount": 50
+                    }, {
+                        "date": "12/20/20",
+                        "description": "Sword Sharpening",
+                        "payment": "card",
+                        "amount": 50
+                    },
+                    {
+                        "date": "12/31/20",
+                        "description": "Sword Sharpening",
+                        "payment": "card",
+                        "amount": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "Groucho",
+        "categories": [{
+                "color": "#93552F",
+                "name": "Food",
+                "budget": 15,
+                "items": [{
+                        "date": "12/24/1919",
+                        "description": "Egg Nog",
+                        "payment": "cash",
+                        "amount": 0.5
+                    }, {
+                        "date": "12/23/1919",
+                        "description": "hot choclate",
+                        "payment": "cash",
+                        "amount": 1
+                    },
+                    {
+                        "date": "12/28/1919",
+                        "description": "Turkey",
+                        "payment": "cash",
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "color": "#FCE4C2",
+                "name": "Housing",
+                "budget": 150,
+                "items": [{
+                        "date": "12/31/1919",
+                        "description": "Mortgage",
+                        "payment": "cash",
+                        "amount": 120
+                    }, {
+                        "date": "10/31/1919",
+                        "description": "hole repair",
+                        "payment": "cash",
+                        "amount": 10
+                    },
+                    {
+                        "date": "10/31/1919",
+                        "description": "Insurance",
+                        "payment": "cash",
+                        "amount": 12.5
+                    }
+                ]
+            },
+            {
+                "color": "#D07C46",
+                "name": "Fun Money",
+                "budget": 10,
+                "items": [{
+                    "date": "12/25/1919",
+                    "description": "Picture Show",
+                    "payment": "cash",
+                    "amount": 1
+                }, {
+                    "date": "12/20/1919",
+                    "description": "Dancing",
+                    "payment": "card",
+                    "amount": 0.50
+                }]
+            }
+        ]
+
+    },
+    {
+        "userName": "Bilbo",
+        "categories": [{
+                "color": "#ffba29",
+                "name": "Food",
+                "budget": 120,
+                "items": [{
+                        "date": "12/24/20",
+                        "description": "Lembas Bread",
+                        "payment": "card",
+                        "amount": 5
+                    }, {
+                        "date": "12/23/20",
+                        "description": "Bilbo's Tea Cake",
+                        "payment": "cash",
+                        "amount": 8
+                    },
+                    {
+                        "date": "12/21/20",
+                        "description": "Spiced Beef",
+                        "payment": "card",
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "color": "#ff9000",
+                "name": "Housing",
+                "budget": 1000,
+                "items": [{
+                        "date": "12/31/20",
+                        "description": "Mortgage",
+                        "payment": "card",
+                        "amount": 800
+                    }, {
+                        "date": "10/31/20",
+                        "description": "hole repair",
+                        "payment": "cash",
+                        "amount": 100
+                    },
+                    {
+                        "date": "10/31/20",
+                        "description": "Insurance",
+                        "payment": "card",
+                        "amount": 125
+                    }
+                ]
+            },
+            {
+                "color": "#ff4200",
+                "name": "Fun Money",
+                "budget": 100,
+                "items": [{
+                        "date": "12/25/20",
+                        "description": "gambling",
+                        "payment": "card",
+                        "amount": 50
+                    }, {
+                        "date": "12/20/20",
+                        "description": "gambling",
+                        "payment": "card",
+                        "amount": 50
+                    },
+                    {
+                        "date": "12/31/20",
+                        "description": "gambling",
+                        "payment": "card",
+                        "amount": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "Sam",
+        "categories": [{
+                "color": "#fbdba0",
+                "name": "Food",
+                "budget": 120,
+                "items": [{
+                        "date": "12/24/20",
+                        "description": "Lembas Bread",
+                        "payment": "card",
+                        "amount": 5
+                    }, {
+                        "date": "12/23/20",
+                        "description": "Bilbo's Tea Cake",
+                        "payment": "cash",
+                        "amount": 8
+                    },
+                    {
+                        "date": "12/21/20",
+                        "description": "Spiced Beef",
+                        "payment": "card",
+                        "amount": 5
+                    }
+                ]
+            },
+            {
+                "color": "#e1af93",
+                "name": "Housing",
+                "budget": 1000,
+                "items": [{
+                        "date": "12/31/20",
+                        "description": "Mortgage",
+                        "payment": "card",
+                        "amount": 800
+                    }, {
+                        "date": "10/31/20",
+                        "description": "hole repair",
+                        "payment": "cash",
+                        "amount": 100
+                    },
+                    {
+                        "date": "10/31/20",
+                        "description": "Insurance",
+                        "payment": "card",
+                        "amount": 125
+                    }
+                ]
+            },
+            {
+                "color": "#ffecca",
+                "name": "Fun Money",
+                "budget": 100,
+                "items": [{
+                        "date": "12/25/20",
+                        "description": "gambling",
+                        "payment": "card",
+                        "amount": 50
+                    }, {
+                        "date": "12/20/20",
+                        "description": "gambling",
+                        "payment": "card",
+                        "amount": 50
+                    },
+                    {
+                        "date": "12/31/20",
+                        "description": "gambling",
+                        "payment": "card",
+                        "amount": 50
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "userName": "Luke",
+        "categories": [{
+            "color": "#fba0a0",
+            "name": "Food",
+            "budget": 100,
+            "items": [{
+                    "date": "10/20/20",
+                    "description": "Watermelon",
+                    "payment": "card",
+                    "amount": 5
+                }, {
+                    "date": "10/20/20",
+                    "description": "hotdog",
+                    "payment": "cash",
+                    "amount": 10
+                },
+                {
+                    "date": "10/31/20",
+                    "description": "Candy",
+                    "payment": "card",
+                    "amount": 5
+                }
+            ]
+        }, {
+            "color": "#97ff9e",
+            "name": "Fun Money",
+            "budget": 100,
+            "items": [{
+                "date": "10/20/20",
+                "description": "Fireworks",
+                "payment": "card",
+                "amount": 5
+            }, {
+                "date": "10/20/20",
+                "description": "Swimming",
+                "payment": "cash",
+                "amount": 10
+            }]
+
+        }]
+    }
+]

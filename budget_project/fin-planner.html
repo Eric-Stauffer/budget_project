@@ -13,10 +13,8 @@
             <h1>Personal Financial Budget</h1>
         </a>
         <div class="login-info">
-            <h4 id="welcome-user">Welcome, </h4>
-            <h4 id="welcome-time">Last Login: </h4>
-            <button onclick="eraseData()" id="erase-data">Erase User Data</button>
-        </div>
+            <h4 id="welcome-user"></h4>
+            <h4 style="cursor: pointer;" id="logout-button" onclick="logout()">Logout</h4>
 
     </header>
 
@@ -48,7 +46,7 @@
         <button type="submit" onclick="submitItem()" class="state-color" id="add-new-button" href="#">+ add new</button>
 
     </div>
-    <div class="popup">
+    <div class="popup" id="category-popup">
         <div class="header">
             <h3>Create a Category</h3>
             <button class="close-button" onclick="removeCategoryPopup()">&times;</button></div>
@@ -64,11 +62,30 @@
             <input type="number" id="set-cat-budget">
         </label>
         </div>
-
         <button type="submit" onclick="submitCategory()" class="popup-submit-button">Create New Category!</button>
     </div>
+
+    <div class="popup" id="login-popup">
+        <div class="header">
+            <h2>Login</h2>
+        </div>
+        <div class="popup-body">
+            <div id="login-message"></div>
+            <label for="username"> Enter Username
+            <input type="text" id="username">
+        </label>
+            <label for="password"> Enter Password
+            <input type="password" id="password">
+        </label>
+        </div>
+        <button type="submit" style="font-size: larger; font-weight: bold;" onclick="verifyLogin()" class="popup-submit-button">Login</button>
+    </div>
+
     <div class="overlay"></div>
+    <script src="login.js"></script>
     <script src="model.js"></script>
+    <script src="get-Json.js"></script>
     <script src="script.js"></script>
+
 
 </body>
