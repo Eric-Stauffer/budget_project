@@ -11,7 +11,7 @@
         <a href="index.html" style="color:white;">
             <h1>Personal Financial Budget</h1>
         </a>
-        <a href="#" class="login-info" onclick="createPopup()">
+        <a href="#" class="login-info" onclick="createPopupLogin()">
             <h3>Login</h3>
         </a>
     </header>
@@ -28,10 +28,10 @@
             </p>
         </div>
     </div>
-    <div class="popup">
+    <div class="popup" id="login-popup">
         <div class="header">
             <h2>Login</h2>
-            <button class="close-button" onclick="removePopup()">&times;</button>
+            <button class="close-button" onclick="removePopupLogin()">&times;</button>
         </div>
         <div class="popup-body">
             <div id="login-message"></div>
@@ -45,48 +45,6 @@
         <button type="submit" style="font-size: larger; font-weight: bold;" onclick="verifyLogin()" class="popup-submit-button">Login</button>
     </div>
     <div class="overlay"></div>
-    <script>
-        function createPopup() {
-            document.querySelector(".popup").classList.add("active")
-            document.querySelector(".overlay").classList.add("active")
-        }
-
-        function removePopup() {
-            document.getElementById("login-message").innerHTML = ""
-            document.querySelector(".popup").classList.remove("active")
-            document.querySelector(".overlay").classList.remove("active")
-        }
-
-        function giveErrorMessage() {
-            let message = document.getElementById("login-message")
-            message.style.color = '#ff0033'
-            message.innerHTML = "* Incorrect Username or Password *"
-        }
-
-        function verifyLogin() {
-
-            let userName = document.getElementById("username").value
-            let password = document.getElementById("password").value
-            let data = "userName=" + userName + "&password=" + password
-
-            let request = new XMLHttpRequest();
-            let url = 'http://universe.tc.uvu.edu/cs2550/assignments/PasswordCheck/check.php'
-            request.open("POST", url, false);
-            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            request.send(data)
-
-
-            if (request.status == 200) {
-                responseJson = JSON.parse(request.response)
-                if (responseJson["result"] == "valid") {
-                    localStorage.setItem("cs2550timestamp", responseJson["userName"] + " " + responseJson["timestamp"])
-                    window.location = "fin-planner.html"
-                } else {
-                    giveErrorMessage();
-                }
-            } else {
-                console.log("There was an error in validating the login")
-            }
-        }
+    <script src="login.js">
     </script>
 </body>
